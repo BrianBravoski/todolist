@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import Header  from './layout/Header'
 import Todos from './components/Todos'
 
 import './App.css';
@@ -45,8 +46,8 @@ this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)]})
    // console.log(this.state.todos)
   return (
     <div className="App">
-      <h3>Chat App</h3>
-
+      
+      <Header/>
       <Todos todos={this.state.todos} markComplete={this.markComplete}  delTodo={this.delTodo}/>
     </div>
   );
