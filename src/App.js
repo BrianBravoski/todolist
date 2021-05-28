@@ -18,11 +18,13 @@ class App extends Component {
      {
        id:3,
        title:'Brunch meeting with the Boss',
-       completed:true
+       completed:false
      }
    ]
  }
 
+
+ //toggle complete
 markComplete=(id)=>{
   this.setState({ todos: this.state.todos.map(todo =>{
     if(todo.id===id){
@@ -32,12 +34,20 @@ markComplete=(id)=>{
   })});
 }
 
+//delete a todo
+
+delTodo=(id)=>{
+this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)]})
+   
+}
 
   render(){
    // console.log(this.state.todos)
   return (
     <div className="App">
-      <Todos todos={this.state.todos} markComplete={this.markComplete}/>
+      <h3>Chat App</h3>
+
+      <Todos todos={this.state.todos} markComplete={this.markComplete}  delTodo={this.delTodo}/>
     </div>
   );
   }
