@@ -28,6 +28,6 @@ a{
   cursor: pointer;
 }
 
-btn:hover{
-  background: #666;
+.btn:hover{
+  background: rgb(48, 94, 2);
 }
